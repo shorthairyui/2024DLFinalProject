@@ -16,7 +16,7 @@ python eval.py
 
 运行前或者遇到错误，记得检查[cfg_coco_object.py](configs/cfg_coco_object.py)和[base_config.py](configs/base_config.py)中的路径是否有错误。这两个文件已经由我配置好。
 
-灵活运用nohup 和 后台运行以节省精力。
+灵活运用nohup 和 后台运行&以节省精力。
 
 ## 快速上手
 
@@ -26,7 +26,7 @@ python eval.py
 python demo.py
 ```
 
-注意修改demo.py第六行的**图片路径**以及**文本列表**以适应新的图片分割任务。
+注意修改demo.py第六行的**图片路径**以及**文本列表**以适应新的图片分割任务。修改demo.py的第26行的vfm_model（可选dino和unet）来更换不同的视觉基础模型。
 
 demo的结果会输出在./image 文件夹下。
 

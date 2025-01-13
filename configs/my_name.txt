@@ -1,2 +1,2 @@
-zebra
-grass
+car
+ground
