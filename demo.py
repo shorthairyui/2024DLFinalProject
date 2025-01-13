@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from torchvision import transforms
 from proxyclip_segmentor import ProxyCLIPSegmentation
 
-img = Image.open('images/image.png')
-name_list = ['car','ground']
+img = Image.open('images/horses.jpg')
+name_list = ['sky', 'hill', 'tree', 'horse', 'grass']
 
 with open('./configs/my_name.txt', 'w') as writers:
     for i in range(len(name_list)):
@@ -23,7 +23,7 @@ img_tensor = transforms.Compose([
 img_tensor = img_tensor.unsqueeze(0).to('cuda')
 
 
-model = ProxyCLIPSegmentation(clip_type='openai', model_type='ViT-B/16', vfm_model='unet',
+model = ProxyCLIPSegmentation(clip_type='openai', model_type='ViT-B/16', vfm_model='dino',
                               name_path='./configs/my_name.txt')
 
 seg_pred = model.predict(img_tensor, data_samples=None)
